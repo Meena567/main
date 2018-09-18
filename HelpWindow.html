@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>AddressBook Level 4 - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>MakanBook - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>AddressBook Level 4 - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="header"><h1>MakanBook - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
@@ -27,6 +27,42 @@
 <li><a href="#exiting-the-program-code-exit-code">3.12. Exiting the program : <code>exit</code></a></li>
 <li><a href="#saving-the-data">3.13. Saving the data</a></li>
 <li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.14. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#write-review-for-restaurant-code-writereview-code">3.15. Write Review For Restaurant: <code>writeReview</code></a></li>
+<li><a href="#list-visited-restaurant-code-listvisitedrestaurants-code">3.16. List Visited Restaurant: <code>listVisitedRestaurants</code></a></li>
+<li><a href="#add-visited-restaurant-code-addvisitedrestaurants-code">3.17. Add Visited Restaurant: <code>addVisitedRestaurants</code></a></li>
+<li><a href="#add-favourites-code-addfavourite-code">3.18. Add Favourites: <code>addFavourite</code></a></li>
+<li><a href="#list-favourites-code-listfavourites-code">3.19. List Favourites: <code>listFavourites</code></a></li>
+<li><a href="#finding-people-to-eat-with-code-createjio-code">3.20. Finding people to eat with: <code>createJio</code></a></li>
+<li><a href="#joining-an-existing-jio-code-joinjio-code">3.21. Joining an existing jio: <code>joinJio</code></a></li>
+<li><a href="#deleting-old-jios-code-deletejio-code">3.22. Deleting old jios: <code>deleteJio</code></a></li>
+<li><a href="#view-public-and-private-jios-code-listjio-code">3.23. View public and private jios: <code>listJio</code></a></li>
+<li><a href="#adding-friends-code-addfriend-code">3.24. Adding friends: <code>addFriend</code></a></li>
+<li><a href="#accept-friend-request-code-acceptfriend-code">3.25. Accept friend request: <code>acceptFriend</code></a></li>
+<li><a href="#delete-friend-request-code-deletefriendrequest-code">3.26. Delete friend request: <code>deleteFriendRequest</code></a></li>
+<li><a href="#adding-groups-code-addgroup-code">3.27. Adding groups: <code>addGroup</code></a></li>
+<li><a href="#accepting-group-requests-code-acceptgroup-code">3.28. Accepting group requests: <code>acceptGroup</code></a></li>
+<li><a href="#deleting-group-requests-code-deletegrouprequest-code">3.29. Deleting group requests: <code>deleteGroupRequest</code></a></li>
+<li><a href="#deleting-groups-code-deletegroup-code">3.30. Deleting groups: <code>deleteGroup</code></a></li>
+<li><a href="#recommend-mutual-friends-code-findmutualfriends-code">3.31. Recommend mutual friends: <code>findMutualFriends</code></a></li>
+<li><a href="#list-all-friends-listfriends">3.32. List all friends: `listFriends `</a></li>
+<li><a href="#list-all-groups-code-listgroups-code">3.33. List all groups: <code>listGroups</code></a></li>
+<li><a href="#list-all-friend-requests-code-listfriendrequests-code">3.34. List all friend requests: <code>listFriendRequests</code></a></li>
+<li><a href="#list-all-group-requests-code-listgrouprequests-code">3.35. List all group requests: <code>listGroupRequests</code></a></li>
+<li><a href="#block-unavailable-timeslot-manually-code-blocktime-code">3.36. Block unavailable timeslot manually: <code>blockTime</code></a></li>
+<li><a href="#free-timeslot-manually-code-freetime-code">3.37. Free timeslot manually: <code>freeTime</code></a></li>
+<li><a href="#see-free-time-code-listtime-code">3.38. See Free Time: <code>listTime</code></a></li>
+<li><a href="#find-jios-that-fit-a-user-s-timetable-for-a-given-nus-academic-week-code-findjio-code">3.39. Find jios that fit a user’s timetable for a given NUS academic week: <code>findJio</code></a></li>
+<li><a href="#find-common-timeslots-with-friends-code-findtime-code">3.40. Find common timeslots with friends: <code>findTime</code></a></li>
+<li><a href="#add-nusmods-schedule-to-block-out-calendar-code-addnusmods-code">3.41. Add NUSMODS schedule to block out calendar: <code>addNUSMODS</code></a></li>
+<li><a href="#add-google-calendar-schedule-to-block-out-calendar-code-addcalendar-code">3.42. Add Google Calendar schedule to block out calendar: <code>addCalendar</code></a></li>
+<li><a href="#sent-add-debt-request-code-adddebt-code">3.43. Sent add debt request: <code>addDebt</code></a></li>
+<li><a href="#sent-clear-debt-request-code-cleardebt-code">3.44. Sent clear debt request: <code>clearDebt</code></a></li>
+<li><a href="#accept-debt-request-code-acceptdebtrequest-code">3.45. Accept debt request: <code>acceptDebtRequest</code></a></li>
+<li><a href="#delete-debt-request-code-deletedebtrequest-code">3.46. Delete debt request: <code>deleteDebtRequest</code></a></li>
+<li><a href="#list-debt-history-code-listdebthistory-code">3.47. List debt history: <code>listDebtHistory</code></a></li>
+<li><a href="#list-debtor-code-listdebtor-code">3.48. List debtor: <code>listDebtor</code></a></li>
+<li><a href="#list-creditor-code-listcreditor-code">3.49. List creditor: <code>listCreditor</code></a></li>
+<li><a href="#list-debt-request-code-listdebtrequest-code">3.50. List Debt Request: <code>listDebtRequest</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -38,7 +74,7 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>AddressBook Level 4 (AB4) is for those who <strong>prefer to use a desktop app for managing contacts</strong>. More importantly, AB4 is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, AB4 can get your contact management tasks done faster than traditional GUI apps. Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
+<p>MakanBook is for those who <strong>prefer to use a desktop app to search for restaurants within NUS to eat at alone or with friends</strong>. More importantly, MakanBook is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI). MakanBook also allows users to add and manage friends and groups, start private and public jios, see which jios fit your NUS timetable and so much more! Interested? Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
 </div>
 </div>
 </div>
@@ -70,6 +106,13 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </li>
 <li>
 <p>Some example commands you can try:</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>TODO</strong>
+<strong>COMMANDS TO BE CHANGED ONCE FINALISED</strong></p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -83,14 +126,15 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </li>
 <li>
 <p><strong><code>exit</code></strong> : exits the app</p>
-</li>
-</ul>
-</div>
-</li>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for details of each command.</p>
 </li>
 </ol>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -111,7 +155,9 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.
+<strong>TODO</strong>
+<strong>CHANGE THIS STATMENT BELOW IF NEEDED</strong></p>
 </li>
 <li>
 <p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
@@ -461,6 +507,547 @@ There is no need to save manually.</p>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
+<div class="paragraph">
+<p><strong>TODO</strong>
+<strong>NEW COMMANDS ADDED FROM HERE</strong></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="write-review-for-restaurant-code-writereview-code"><a class="link" href="#write-review-for-restaurant-code-writereview-code">3.15. Write Review For Restaurant: <code>writeReview</code></a></h3>
+<div class="paragraph">
+<p>Allows user to write reviews for a specific restaurant.<br>
+Format: <code>writeReview INDEX s/SCORE r/REVIEW</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>writeReview 3 s/3 r/Disgusting, I’ve seen better food in prisons</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-visited-restaurant-code-listvisitedrestaurants-code"><a class="link" href="#list-visited-restaurant-code-listvisitedrestaurants-code">3.16. List Visited Restaurant: <code>listVisitedRestaurants</code></a></h3>
+<div class="paragraph">
+<p>Returns a list of all the restaurants the User has been to before.<br>
+Format: <code>listVisitedRestaurants</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-visited-restaurant-code-addvisitedrestaurants-code"><a class="link" href="#add-visited-restaurant-code-addvisitedrestaurants-code">3.17. Add Visited Restaurant: <code>addVisitedRestaurants</code></a></h3>
+<div class="paragraph">
+<p>Allows user to add a restaurant into his visited restaurant list with date, price, rating/score and meal consumed.<br>
+Format: <code>addVisitedRestaurants r/RESTAURANT_ID t/DATE p/PRICE s/SCORE m/MEAL_CONSUMED</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addVisitedRestaurants r/COM1231 t/2011-11-11 p/3 s/4 m/Lemon Chicken Rice</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-favourites-code-addfavourite-code"><a class="link" href="#add-favourites-code-addfavourite-code">3.18. Add Favourites: <code>addFavourite</code></a></h3>
+<div class="paragraph">
+<p>Allows User to add a restaurant into his account’s favourites.<br>
+Format: <code>addFavourite r/RESTAURANT ID s/Score</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addFavourite r/COM1231 s/4</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-favourites-code-listfavourites-code"><a class="link" href="#list-favourites-code-listfavourites-code">3.19. List Favourites: <code>listFavourites</code></a></h3>
+<div class="paragraph">
+<p>Allows User to list the restaurants he has entered into his favourites.<br>
+Format: <code>listFavourites</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="finding-people-to-eat-with-code-createjio-code"><a class="link" href="#finding-people-to-eat-with-code-createjio-code">3.20. Finding people to eat with: <code>createJio</code></a></h3>
+<div class="paragraph">
+<p>Users can find other users to eat with through inviting users. “createJio” creates a jio that is added to the global list of jios.<br>
+Format: <code>createJio n/NAME d/DATE t/TIME p/PLACE [n/NUMBER OF PEOPLE] [--private]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Jio&#8201;&#8212;&#8201;an invitation to hang out.</p>
+</li>
+<li>
+<p>Name, date, time, place must be provided. The other parameters are optional.</p>
+</li>
+<li>
+<p>All users will be able to view the list of jios, unless the user specifies that it is a private jio. If --private tag is added, the jio is only visible to friends.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>createJio n/MALA!!! d/270918 t/1200 p/FineFood n/4</code></p>
+</li>
+<li>
+<p><code>createJio n/saporeFriends d/010118 t/1800 p/Sapore --friends</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="joining-an-existing-jio-code-joinjio-code"><a class="link" href="#joining-an-existing-jio-code-joinjio-code">3.21. Joining an existing jio: <code>joinJio</code></a></h3>
+<div class="paragraph">
+<p>Users can join an existing jio to find people to eat with, without having to create one of their own.<br>
+Format: <code>joinJio NAME</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>User has to indicate the name of the jio.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>joinJio MALA!!</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-old-jios-code-deletejio-code"><a class="link" href="#deleting-old-jios-code-deletejio-code">3.22. Deleting old jios: <code>deleteJio</code></a></h3>
+<div class="paragraph">
+<p>Users can specify a jio to delete. All old jios are automatically deleted.<br>
+Format: <code>deleteJio NAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deleteJio MALA!!</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-public-and-private-jios-code-listjio-code"><a class="link" href="#view-public-and-private-jios-code-listjio-code">3.23. View public and private jios: <code>listJio</code></a></h3>
+<div class="paragraph">
+<p>Users can view all jios available. “listJio” will display all public jios and all private jios.<br>
+Format: <code>listJio</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-friends-code-addfriend-code"><a class="link" href="#adding-friends-code-addfriend-code">3.24. Adding friends: <code>addFriend</code></a></h3>
+<div class="paragraph">
+<p>A User will send a friend request to another User who will then have to accept the friend request.<br>
+Format: <code>addFriend USERNAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addFriend Meena567</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="accept-friend-request-code-acceptfriend-code"><a class="link" href="#accept-friend-request-code-acceptfriend-code">3.25. Accept friend request: <code>acceptFriend</code></a></h3>
+<div class="paragraph">
+<p>A User can accept a friend request of another User so that the pair of them can become friends.<br>
+Format: <code>acceptFriend NAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>acceptFriend Meena567</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-friend-request-code-deletefriendrequest-code"><a class="link" href="#delete-friend-request-code-deletefriendrequest-code">3.26. Delete friend request: <code>deleteFriendRequest</code></a></h3>
+<div class="paragraph">
+<p>A User can delete friend request of another User whom they might not know.<br>
+Format: <code>deleteFriendRequest USERNAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deleteFriendRequest Meena567</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-groups-code-addgroup-code"><a class="link" href="#adding-groups-code-addgroup-code">3.27. Adding groups: <code>addGroup</code></a></h3>
+<div class="paragraph">
+<p>A User will create a group and send out invitations to all the other users, which they will then have to accept to join the group. <br>
+Format: <code>addGroup GROUPNAME [Users… USERNAMES]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Every group will automatically add the user creating the group.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addGroup onlyMe</code></p>
+</li>
+<li>
+<p><code>addGroup CS2103, chelchia, evanmok2401, katenhy, yewwoei</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="accepting-group-requests-code-acceptgroup-code"><a class="link" href="#accepting-group-requests-code-acceptgroup-code">3.28. Accepting group requests: <code>acceptGroup</code></a></h3>
+<div class="paragraph">
+<p>A User can accept the invitation to join a group.<br>
+Format: <code>acceptGroup GROUPNAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>acceptGroup CS2103</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-group-requests-code-deletegrouprequest-code"><a class="link" href="#deleting-group-requests-code-deletegrouprequest-code">3.29. Deleting group requests: <code>deleteGroupRequest</code></a></h3>
+<div class="paragraph">
+<p>A User can choose to delete the group request should they not want to join the group.<br>
+Format: <code>deleteGroupRequest GROUPNAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deleteGroupRequest CS2103</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-groups-code-deletegroup-code"><a class="link" href="#deleting-groups-code-deletegroup-code">3.30. Deleting groups: <code>deleteGroup</code></a></h3>
+<div class="paragraph">
+<p>A User can leave a group and they will be removed from the group.<br>
+Format: <code>deleteGroup GROUPNAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deleteGroup CS2103</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="recommend-mutual-friends-code-findmutualfriends-code"><a class="link" href="#recommend-mutual-friends-code-findmutualfriends-code">3.31. Recommend mutual friends: <code>findMutualFriends</code></a></h3>
+<div class="paragraph">
+<p>A User can find other users based on their mutual friends.<br>
+Format: <code>findMutualFriends</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-all-friends-listfriends"><a class="link" href="#list-all-friends-listfriends">3.32. List all friends: `listFriends `</a></h3>
+<div class="paragraph">
+<p>A User can list all his friends. This method will internally call upon a list (Arraylist &lt;Object&gt;) method.<br>
+Format: <code>listFriends</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-all-groups-code-listgroups-code"><a class="link" href="#list-all-groups-code-listgroups-code">3.33. List all groups: <code>listGroups</code></a></h3>
+<div class="paragraph">
+<p>A User can list all his groups. This method will internally call upon a list (Arraylist &lt;Object&gt;) method.<br>
+Format: <code>listGroups</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-all-friend-requests-code-listfriendrequests-code"><a class="link" href="#list-all-friend-requests-code-listfriendrequests-code">3.34. List all friend requests: <code>listFriendRequests</code></a></h3>
+<div class="paragraph">
+<p>A User can list all his friend requests. This method will internally call upon a list (Arraylist &lt;Object&gt;) method.<br>
+Format: <code>listFriendRequests</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-all-group-requests-code-listgrouprequests-code"><a class="link" href="#list-all-group-requests-code-listgrouprequests-code">3.35. List all group requests: <code>listGroupRequests</code></a></h3>
+<div class="paragraph">
+<p>A User can list all his group requests. This method will internally call upon a list (Arraylist &lt;Object&gt;) method.<br>
+Format: <code>listGroupRequest</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="block-unavailable-timeslot-manually-code-blocktime-code"><a class="link" href="#block-unavailable-timeslot-manually-code-blocktime-code">3.36. Block unavailable timeslot manually: <code>blockTime</code></a></h3>
+<div class="paragraph">
+<p>Blocks out that timeslot in the user’s timetable to signify that he is busy and not available to eat.<br>
+Format: <code>blockTime WEEKNUMBER DAY HHHH HHHH</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>blockTime week5 tues 1800 1900</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="free-timeslot-manually-code-freetime-code"><a class="link" href="#free-timeslot-manually-code-freetime-code">3.37. Free timeslot manually: <code>freeTime</code></a></h3>
+<div class="paragraph">
+<p>Frees up that timeslot in the user’s timetable to signify that he is free and available to eat.<br>
+Format: <code>freeTime WEEKNUMBER DAY HHHH HHHH</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>freeTime week5 tues 1900 2100</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="see-free-time-code-listtime-code"><a class="link" href="#see-free-time-code-listtime-code">3.38. See Free Time: <code>listTime</code></a></h3>
+<div class="paragraph">
+<p>Views the list of free time to eat on those dates.<br>
+Format: <code>listTime WEEKNUMBER</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>listTime week5</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-jios-that-fit-a-user-s-timetable-for-a-given-nus-academic-week-code-findjio-code"><a class="link" href="#find-jios-that-fit-a-user-s-timetable-for-a-given-nus-academic-week-code-findjio-code">3.39. Find jios that fit a user’s timetable for a given NUS academic week: <code>findJio</code></a></h3>
+<div class="paragraph">
+<p>Views the list of free time to eat on those dates.<br>
+Format: <code>findJio WEEKNUMBER</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>findJio week8</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-common-timeslots-with-friends-code-findtime-code"><a class="link" href="#find-common-timeslots-with-friends-code-findtime-code">3.40. Find common timeslots with friends: <code>findTime</code></a></h3>
+<div class="paragraph">
+<p>Find common eating timeslots with a list of friends.<br>
+Format: <code>findTime [w/week number] [f/name of friend] [f/name of friend] ….</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>findTime week6 f/Aiden  f/Chelsea f/Evan Mok f/Meena f/Kate</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-nusmods-schedule-to-block-out-calendar-code-addnusmods-code"><a class="link" href="#add-nusmods-schedule-to-block-out-calendar-code-addnusmods-code">3.41. Add NUSMODS schedule to block out calendar: <code>addNUSMODS</code></a></h3>
+<div class="paragraph">
+<p>Block out schedules on the timetable using a NUSMODS link.<br>
+Format: <code>addNUSMODS NUSMODSLINK</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addCalendar nusmods.com/g91j3g08sdgl13</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-google-calendar-schedule-to-block-out-calendar-code-addcalendar-code"><a class="link" href="#add-google-calendar-schedule-to-block-out-calendar-code-addcalendar-code">3.42. Add Google Calendar schedule to block out calendar: <code>addCalendar</code></a></h3>
+<div class="paragraph">
+<p>Block out schedules on the timetable using a google account.<br>
+Format: <code>addCalendar USERNAME PASSWORD</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addCalendar <a href="mailto:aiden@gmail.com">aiden@gmail.com</a> aidenpassword</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sent-add-debt-request-code-adddebt-code"><a class="link" href="#sent-add-debt-request-code-adddebt-code">3.43. Sent add debt request: <code>addDebt</code></a></h3>
+<div class="paragraph">
+<p>A user will send a debt request to another user with specific amount.<br>
+Format: <code>addDebt USERNAME AMOUNT</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addDebt Kate123 4.30</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sent-clear-debt-request-code-cleardebt-code"><a class="link" href="#sent-clear-debt-request-code-cleardebt-code">3.44. Sent clear debt request: <code>clearDebt</code></a></h3>
+<div class="paragraph">
+<p>A user can send a clear request to another user to clear the debt and the amount will be balanced off.<br>
+Format: <code>clearDebt NAME AMOUNT</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>clearDebt Kate123 4.30</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="accept-debt-request-code-acceptdebtrequest-code"><a class="link" href="#accept-debt-request-code-acceptdebtrequest-code">3.45. Accept debt request: <code>acceptDebtRequest</code></a></h3>
+<div class="paragraph">
+<p>A user can accept (add or clear) request from another user, then a record will be created to both of their account with the each other name, amount, and request ID.<br>
+Format: <code>acceptDebtRequest NAME REQUESTID</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>acceptDebtRequest Kate123 hxas78</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-debt-request-code-deletedebtrequest-code"><a class="link" href="#delete-debt-request-code-deletedebtrequest-code">3.46. Delete debt request: <code>deleteDebtRequest</code></a></h3>
+<div class="paragraph">
+<p>A user can delete request send by other user if it is a wrong request.<br>
+Format: <code>deleteDebtRequest USERNAME REQUESTID</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deleteDebtRequest Kate123 hxas78</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-debt-history-code-listdebthistory-code"><a class="link" href="#list-debt-history-code-listdebthistory-code">3.47. List debt history: <code>listDebtHistory</code></a></h3>
+<div class="paragraph">
+<p>A user can list all his transaction, including the Transcation ID, user, amount and type and status.<br>
+Format: <code>listDebtHistory</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-debtor-code-listdebtor-code"><a class="link" href="#list-debtor-code-listdebtor-code">3.48. List debtor: <code>listDebtor</code></a></h3>
+<div class="paragraph">
+<p>A User can list all his debtor, including the user and amount.<br>
+Format: <code>listDebtor</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-creditor-code-listcreditor-code"><a class="link" href="#list-creditor-code-listcreditor-code">3.49. List creditor: <code>listCreditor</code></a></h3>
+<div class="paragraph">
+<p>A User can list all his creditors, including the user and amount.<br>
+Format: <code>listCreditor</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-debt-request-code-listdebtrequest-code"><a class="link" href="#list-debt-request-code-listdebtrequest-code">3.50. List Debt Request: <code>listDebtRequest</code></a></h3>
+<div class="paragraph">
+<p>A User can list all received request, including the type, request ID, user and amount.<br>
+Format: <code>listDebtRequest</code></p>
+</div>
 </div>
 </div>
 </div>
@@ -519,4 +1106,4 @@ e.g.<code>select 2</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-09-18 07:37:36 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-09-18 12:19:34 UTC</div></div></div></body></html>
