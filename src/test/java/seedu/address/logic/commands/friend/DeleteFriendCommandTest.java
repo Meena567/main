@@ -81,6 +81,10 @@ public class DeleteFriendCommandTest {
             return loggedIn;
         }
 
+        /**
+         * adds a pending friendship
+         * @param friendUsername
+         */
         public void addFriendship(Username friendUsername) {
             requireNonNull(friendUsername);
             Friendship f = new Friendship(TypicalUsers.getTypicalUserData().getUser(friendUsername),
@@ -95,7 +99,7 @@ public class DeleteFriendCommandTest {
             User friend = TypicalUsers.getTypicalUserData().getUser(friendUsername);
             Friendship toRemove = new Friendship(friend, friend, currentUser, FriendshipStatus.ACCEPTED);
             for (Friendship f: friendsAdded) {
-                if(toRemove.equals(f)) {
+                if (toRemove.equals(f)) {
                     friendsAdded.remove(f);
                     break;
                 }

@@ -118,6 +118,10 @@ public class AcceptFriendCommandTest {
             return loggedIn;
         }
 
+        /**
+         * adds friendship which is pending
+         * @param friendUsername
+         */
         public void addFriendship(Username friendUsername) {
             requireNonNull(friendUsername);
             Friendship f = new Friendship(TypicalUsers.getTypicalUserData().getUser(friendUsername),
@@ -132,7 +136,7 @@ public class AcceptFriendCommandTest {
             User friend = TypicalUsers.getTypicalUserData().getUser(friendUsername);
             Friendship toChange = new Friendship(friend, friend, currentUser);
             for (Friendship f: friendsAdded) {
-                if(toChange.equals(f)) {
+                if (toChange.equals(f)) {
                     f.changeFriendshipStatus();
                 }
             }
