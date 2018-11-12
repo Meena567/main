@@ -13,18 +13,16 @@ import org.junit.rules.ExpectedException;
 import seedu.address.logic.CommandHistory;
 import seedu.address.logic.commands.CommandResult;
 import seedu.address.logic.commands.ModelStub;
-import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
 import seedu.address.model.friend.Friendship;
-import seedu.address.model.friend.FriendshipStatus;
 import seedu.address.model.user.User;
 import seedu.address.model.user.Username;
 import seedu.address.testutil.TypicalUsers;
 import seedu.address.testutil.UserBuilder;
 
-public class AcceptFriendCommandTest {
+public class DeleteFriendRequestCommandTest {
     private static final CommandHistory EMPTY_COMMAND_HISTORY = new CommandHistory();
 
     @Rule
@@ -41,74 +39,38 @@ public class AcceptFriendCommandTest {
      * If null username is passed, throws a null pointer exception
      */
     @Test
-    public void constructor_nullAcceptFriend_throwsNullPointerException() {
+    public void constructor_nullDeleteFriendRequest_throwsNullPointerException() {
         thrown.expect(NullPointerException.class);
-        new AcceptFriendCommand(null);
+        new DeleteFriendRequestCommand(null);
     }
 
     @Test
-    public void execute_acceptFriendAcceptedByModel_addSuccessful() throws Exception {
-        AcceptFriendCommandTest.ModelStubforAcceptFriend modelStub = new AcceptFriendCommandTest
-                .ModelStubforAcceptFriend();
+    public void execute_deleteFriendRequestAcceptedByModel_addSuccessful() throws Exception {
+        DeleteFriendRequestCommandTest.ModelStubforDeleteFriendRequest modelStub = new DeleteFriendRequestCommandTest
+                .ModelStubforDeleteFriendRequest();
 
         modelStub.addFriendship(validUsernameA);
 
-        CommandResult commandResult = new AcceptFriendCommand(validUsernameA)
+        // size is 1 as new friendship has been added
+        assertEquals(1, modelStub.friendsAdded.size());
+
+        CommandResult commandResult = new DeleteFriendRequestCommand(validUsernameA)
                 .execute(modelStub, commandHistory);
 
         // assert that the feedback message is the same
-        assertEquals(String.format(AcceptFriendCommand.MESSAGE_SUCCESS, validUsernameA),
+        assertEquals(String.format(DeleteFriendRequestCommand.MESSAGE_SUCCESS, validUsernameA),
                 commandResult.feedbackToUser);
 
-        // assert that the size of friendsAdded is 1 as only one friendship
-        assertEquals(1, modelStub.friendsAdded.size());
-
-        // assert that every field in the friendship is the same
-        assertEquals(validUsernameA, modelStub.friendsAdded.get(0).getFriendUsername());
-        assertEquals(validUsernameA, modelStub.friendsAdded.get(0).getInitiatedBy().getUsername());
-        assertEquals(currentUsername, modelStub.friendsAdded.get(0).getMyUsername());
-        assertEquals(FriendshipStatus.ACCEPTED, modelStub.friendsAdded.get(0).getFriendshipStatus());
+        // assert that the size of friendsAdded is 0 as friendship has been deleted
+        assertEquals(0, modelStub.friendsAdded.size());
 
         assertEquals(EMPTY_COMMAND_HISTORY, commandHistory);
     }
 
     /**
-     * Throws exception if no user is currently logged in
-     * @throws Exception
+     * A Model stub that always deletes friend requests
      */
-    @Test
-    public void execute_notLoggedIn_throwsCommandException() throws Exception {
-
-        AcceptFriendCommand acceptFriendCommand = new AcceptFriendCommand(validUsernameA);
-        AcceptFriendCommandTest.ModelStubforAcceptFriend modelStub = new AcceptFriendCommandTest
-                .ModelStubforAcceptFriend();
-        modelStub.loggedIn = false;
-
-        thrown.expect(CommandException.class);
-        thrown.expectMessage(String.format(
-                AcceptFriendCommand.MESSAGE_NOT_LOGGED_IN, AcceptFriendCommand.COMMAND_WORD));
-        acceptFriendCommand.execute(modelStub, commandHistory);
-    }
-
-    /**
-     * Throw exception if no such request is received
-     * @throws Exception
-     */
-    @Test
-    public void execute_noFriendToAccept() throws Exception {
-        AcceptFriendCommandTest.ModelStubforAcceptFriend modelStub = new AcceptFriendCommandTest
-                .ModelStubforAcceptFriend();
-        AcceptFriendCommand acceptFriendCommand = new AcceptFriendCommand(validUsernameA);
-        thrown.expect(CommandException.class);
-        thrown.expectMessage(String.format(
-                AcceptFriendCommand.MESSAGE_NO_REQUEST, AcceptFriendCommand.COMMAND_WORD));
-        acceptFriendCommand.execute(modelStub, commandHistory);
-    }
-
-    /**
-     * A Model stub that always adds friend being added.
-     */
-    private class ModelStubforAcceptFriend extends ModelStub {
+    private class ModelStubforDeleteFriendRequest extends ModelStub {
 
         private final ArrayList<Friendship> friendsAdded = new ArrayList<>();
         private boolean loggedIn = true;
@@ -127,13 +89,14 @@ public class AcceptFriendCommandTest {
         }
 
         @Override
-        public void acceptFriend(Username friendUsername) {
+        public void deleteFriendRequest(Username friendUsername) {
             requireNonNull(friendUsername);
             User friend = TypicalUsers.getTypicalUserData().getUser(friendUsername);
-            Friendship toChange = new Friendship(friend, friend, currentUser);
+            Friendship toRemove = new Friendship(friend, friend, currentUser);
             for (Friendship f: friendsAdded) {
-                if(toChange.equals(f)) {
-                    f.changeFriendshipStatus();
+                if(toRemove.equals(f)) {
+                    friendsAdded.remove(f);
+                    break;
                 }
             }
         }
