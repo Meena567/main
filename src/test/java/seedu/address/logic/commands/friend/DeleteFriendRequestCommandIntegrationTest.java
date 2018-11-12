@@ -73,7 +73,8 @@ public class DeleteFriendRequestCommandIntegrationTest {
         Model modelNotLoggedIn = new ModelManager(new AddressBook(), new UserPrefs(),
                 TypicalUsers.getTypicalUserData());
         assertCommandFailure(new DeleteFriendRequestCommand(validUsernameA), modelNotLoggedIn, commandHistory,
-                String.format(DeleteFriendRequestCommand.MESSAGE_NOT_LOGGED_IN, DeleteFriendRequestCommand.COMMAND_WORD));
+                String.format(DeleteFriendRequestCommand.MESSAGE_NOT_LOGGED_IN,
+                        DeleteFriendRequestCommand.COMMAND_WORD));
     }
 
     /**
