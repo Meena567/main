@@ -438,8 +438,7 @@ public class User {
         if (balAmount == 0) {
             this.debts.asUnmodifiableObservableList().get(count).changeDebtStatus(DebtStatus.CLEARED);
             debtor.debts.asUnmodifiableObservableList().get(count).changeDebtStatus(DebtStatus.CLEARED);
-        }
-        else if (balAmount > 0) {
+        } else if (balAmount > 0) {
             Amount amt = new Amount(String.valueOf(Math.round(balAmount * 100) / 100));
             Debt toAdd = new Debt(this, debtor, amount, DebtStatus.CLEARED);
             this.debts.add(toAdd);
