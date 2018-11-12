@@ -61,7 +61,7 @@ public class AddFriendCommandTest {
         assertEquals(String.format(AddFriendCommand.MESSAGE_SUCCESS, validUsernameA),
                 commandResult.feedbackToUser);
 
-        // asser that the size of friendsAdd is 1 as only one friendship is created
+        // assert that the size of friendsAdd is 1 as only one friendship is created
         assertEquals(1, modelStub.friendsAdded.size());
 
         // assert that every field in the friendship is the same
