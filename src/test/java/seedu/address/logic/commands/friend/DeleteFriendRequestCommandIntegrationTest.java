@@ -19,9 +19,9 @@ import seedu.address.testutil.TypicalUsers;
 import seedu.address.testutil.UserBuilder;
 
 /**
- * Contains integration tests (interaction with the Model) for {@code AcceptFriendCommand}.
+ * Contains integration tests (interaction with the Model) for {@code DeleteFriendRequestCommand}.
  */
-public class AcceptFriendCommandIntegrationTest {
+public class DeleteFriendRequestCommandIntegrationTest {
     private Model model;
 
     private CommandHistory commandHistory = new CommandHistory();
@@ -39,7 +39,7 @@ public class AcceptFriendCommandIntegrationTest {
     }
 
     @Test
-    public void execute_newAcceptFriend_success() throws CommandException {
+    public void execute_newDeleteFriendRequest_success() throws CommandException {
         // need to create copies of the users to prevent users in model and expectedModel
         // to have the same reference and thus accidentally carrying out methods on them
         User userACopy = new UserBuilder().withEmail(validUserA.getEmail().toString())
@@ -60,9 +60,9 @@ public class AcceptFriendCommandIntegrationTest {
                 new UserData(), currentUserCopy);
         expectedModel.addUser(currentUserCopy);
         expectedModel.addUser(userACopy);
-        expectedModel.acceptFriend(userACopy.getUsername());
-        assertCommandSuccess(new AcceptFriendCommand(validUsernameA), model, commandHistory,
-                String.format(AcceptFriendCommand.MESSAGE_SUCCESS, validUsernameA), expectedModel);
+        expectedModel.deleteFriendRequest(userACopy.getUsername());
+        assertCommandSuccess(new DeleteFriendRequestCommand(validUsernameA), model, commandHistory,
+                String.format(DeleteFriendRequestCommand.MESSAGE_SUCCESS, validUsernameA), expectedModel);
     }
 
     /**
@@ -72,17 +72,17 @@ public class AcceptFriendCommandIntegrationTest {
     public void execute_notLoggedIn() {
         Model modelNotLoggedIn = new ModelManager(new AddressBook(), new UserPrefs(),
                 TypicalUsers.getTypicalUserData());
-        assertCommandFailure(new AcceptFriendCommand(validUsernameA), modelNotLoggedIn, commandHistory,
-                String.format(AcceptFriendCommand.MESSAGE_NOT_LOGGED_IN, AcceptFriendCommand.COMMAND_WORD));
+        assertCommandFailure(new DeleteFriendRequestCommand(validUsernameA), modelNotLoggedIn, commandHistory,
+                String.format(DeleteFriendRequestCommand.MESSAGE_NOT_LOGGED_IN, DeleteFriendRequestCommand.COMMAND_WORD));
     }
 
     /**
-     * Throw exception if trying to accept a friendship from a user whom they did not receive a request from
+     * Throw exception if trying to delete a friendship from a user whom they did not receive a request from
      */
     @Test
     public void execute_userNoRequest() {
         model.addUser(validUserA);
-        assertCommandFailure(new AcceptFriendCommand(validUsernameA), model, commandHistory,
-                AcceptFriendCommand.MESSAGE_NO_REQUEST);
+        assertCommandFailure(new DeleteFriendRequestCommand(validUsernameA), model, commandHistory,
+                DeleteFriendRequestCommand.MESSAGE_NO_SUCH_REQUEST);
     }
 }
