@@ -82,7 +82,7 @@ public class AddDebtCommandSystemTest extends AddressBookSystemTest {
 
         // Test success for AddDebtCommand if execute the same command as Debt Id is generate automatically and
         // should not be repeated, so not a duplicated Debt.
-        // This allow user create debt with amount and debtor.
+        // This allow user create multiple debts with same amount and debtor.
 
         addSleep();
         assertCommandSuccess(command, model, userA, amount);

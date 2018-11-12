@@ -23,7 +23,7 @@ Responsibilities: Integration, In charge of Storage Component
 
 === Aiden Low Yew Woei
 image::yewwoei.png[width="150", align="left"]
-{empty} [https://github.com/yewwoei[github]]
+{empty} [https://github.com/yewwoei[github]][<<yewwoei#, portfolio>>]
 
 Role: Developer +
 Responsibilities: Testing, In charge of Logic Component
@@ -32,7 +32,7 @@ Responsibilities: Testing, In charge of Logic Component
 
 === Meenakshi Solayappan
 image::meena567.png[width="150", align="left"]
-{empty}[https://github.com/meena567[github]]
+{empty}[https://github.com/meena567[github]][<<meena567#, portfolio>>]
 
 Role: Developer +
 Responsibilities: Documentation, Code Quality, In charge of Storage Component
@@ -41,7 +41,7 @@ Responsibilities: Documentation, Code Quality, In charge of Storage Component
 
 === Chelsea Chia Jia Hwa
 image::chelchia.png[width="150", align="left"]
-{empty}[https://github.com/chelchia[github]]
+{empty}[https://github.com/chelchia[github]][<<chelchia#, portfolio>>]
 
 Role: Developer +
 Responsibilities: Deliverables and Deadline, In charge of Model Component
@@ -50,7 +50,7 @@ Responsibilities: Deliverables and Deadline, In charge of Model Component
 
 === Ng Hoi Ying Kate
 image::katenhy.png[width="150", align="left"]
-{empty}[http://github.com/katenhy[github]]
+{empty}[http://github.com/katenhy[github]][<<NgHoiYing#, portfolio>>]
 
 Role: Developer +
 Responsibilities: Scheduling and Tracking, In charge of UI Component

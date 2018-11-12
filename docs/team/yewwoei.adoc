@@ -56,4 +56,15 @@ include::../UserGuide.adoc[tag=yewwoei]
 |_Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._
 |===
 
-include::../DeveloperGuide.adoc[tag=yewwoei]
+include::../DeveloperGuide.adoc[tag=yewwoeiModel]
+
+include::../DeveloperGuide.adoc[tag=yewwoeiDate]
+
+include::../DeveloperGuide.adoc[tag=yewwoeiFeature]
+
+include::../DeveloperGuide.adoc[tag=yewwoeiManual]
+
+
+
+
+

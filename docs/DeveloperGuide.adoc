@@ -202,13 +202,15 @@ Given below is the Sequence Diagram for interactions within the `Logic` componen
 image::DeleteRestaurantSdForLogic.png[width="800"]
 
 [[Design-Model]]
-// tag::yewwoei[]
+// tag::yewwoeiModel[]
+// tag::chelchia[]
 === Model component
 
 .Structure of the Model Component
 image::ModelClassDiagramWithJio.png[width="800"]
 
 *API* : link:{repoURL}/src/main/java/seedu/address/model/Model.java[`Model.java`]
+// end::chelchia[]
 
 The `Model`,
 
@@ -219,9 +221,8 @@ The `Model`,
 
 
 [[Design-Storage]]
-// end::yewwoei[]
+// end::yewwoeiModel[]
 
-// tag::evanmok2401(1)[]
 === Storage component
 
 .Structure of the Storage Component
@@ -240,6 +241,7 @@ The `Storage` component,
 
 Classes used by multiple components are in the `seedu.addressbook.commons` package.
 
+// tag::evanmok2401(1)[]
 == Implementation
 
 This section describes some noteworthy details on how certain components and features are implemented.
@@ -312,7 +314,7 @@ chooses to delete the friend request, the PENDING friendship under User B will b
 friend request, the friendship status will be changed from PENDING to ACCEPTED for User B and an identical friendship will
 be added to User A, the one who initiated the friendship.
 
-image::AddFriendSequenceDiagram.png[width="800"]
+image::AddFriendCommandSequenceDiagram.png[width="800"]
 
 Now moving on to deletion of friends. Assuming that two Users C and D are friends with each other, and User C deletes his
 or her friendship with User D. This would delete the friendship stored under both User C and User D even if User D did not
@@ -414,7 +416,7 @@ it for self benefit.
 
 // end::kate[]
 
-// tag::yewwoei[]
+// tag::yewwoeiDate[]
 === Internal Representation of Dates
 ==== Current Implementation
 Each date consists of three points of data: the NUS Week, the Day of the week, and the Time of the day.
@@ -436,7 +438,7 @@ The rational for this is to discourage improper sleeping hours among students in
 ==== Alternatives considered
 Another alternative considered was to use the Calendar library in Java to store the dates as an underlying data structure. However,
 as the NUS week system would be the most intuitive way of user input for students, this may only create additional work.
-// end::yewwoei[]
+// end::yewwoeiDate[]
 
 // tag::chelchia[]
 === Jio Feature
@@ -487,7 +489,7 @@ do not touch current user at all, but pass `Jio` objects on to `ModelManager`.
 ** Cons: May be storing unnecessary information.
 // end::chelchia[]
 
-// tag::yewwoei[]
+// tag::yewwoeiFeature[]
 === User Schedule Feature
 
 ==== Benefits for the user
@@ -533,7 +535,7 @@ Exceptions are handled with the `NotLoggedInCommandException` class in the `Logi
 
 The algorithm for finding all the free dates for a user or group is found inside the UniqueSchedule class.
 
-// end::yewwoei
+// end::yewwoeiFeature[]
 === Logging
 
 We are using `java.util.logging` package for logging. The `LogsCenter` class is used to manage the logging levels and logging destinations.
@@ -1054,10 +1056,10 @@ Work Division
 - [x] V1.2: User are able to add/delete/accept/clear/list a debt.
 - [x] V1.3: User are able to add debt to a group and auto balancing for debt is implemented. List different type of debt with second list panel.
 
-==== Aiden :
-- [x] V1.1:
-- [x] V1.2:
-- [x] V1.3:
+==== Yew Woei :
+- [x] V1.1: Timetable feature related models added.
+- [x] V1.2: User can block or free dates. Implemented dates.
+- [x] V1.3: User can list out his schedules for the group.
 
 
 [appendix]
@@ -1591,7 +1593,7 @@ These instructions only provide a starting point for testers to work on; testers
 // end::chelchia[]
 
 
-// tag::yewwoei[]
+// tag::yewwoeiManual[]
 === Block Date from your schedule.
 
 . Block a valid date from your schedule
@@ -1637,7 +1639,8 @@ Expected: The list of timeslots for meeting will be listed in the browser panel 
 .. Prerequisites: User is logged in and not part of the group.
 ... Test case: `findDates g/krustycrab w/13` +
 Expected: You are not in that group.
-// end::yewwoei[]
+
+// end::yewwoeiManual[]
 
 
 

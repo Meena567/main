@@ -20,8 +20,6 @@ By: `Team W10-2`      Since: `Aug 2018`      Licence: `MIT`
 
 Makan Book is for those who *prefer to use a desktop app to search for restaurants within NUS to eat at alone or with friends*. More importantly, MakanBook is *optimized for those who prefer to work with a Command Line Interface* (CLI) while still having the benefits of a Graphical User Interface (GUI). MakanBook also allows users to add and manage friends and groups, start private and public jios and so much more! Interested? Jump to the <<Quick Start>> to get started. Enjoy!
 
-// tag::evanmok2401(2)[]
-
 == Quick Start
 
 .  Ensure you have Java version `9` or later installed in your Computer.
@@ -98,7 +96,7 @@ Format: `history`
 ====
 Pressing the kbd:[&uarr;] and kbd:[&darr;] arrows will display the previous and next input respectively in the command box.
 ====
-
+// tag::evanmok2401(1)[]
 === Selecting a restaurant : `selectRestaurant`
 
 Selects the restaurant identified by the index number used in the displayed restaurant list. It will display the webpage of the restaurant
@@ -185,7 +183,7 @@ Examples:
 Allows a user to view his own profile in the Makan Book. The browser panel will then contains the user's details and
 the reviews he's written. +
 Format: `displayProfile`
-// end::evanmok2401(2)[]
+// end::evanmok2401(1)[]
 
 // tag::meena567[]
 === Adding friends: `addFriend`
@@ -583,7 +581,7 @@ The `redo` command fails as there are no `undo` commands executed previously.
 // end::undoredo[]
 
 == Changes coming in v2.0
-// tag::evanmok2401(1)[]
+// tag::evanmok2401(2)[]
 === Restriction of Privileges to Makan Book
 Currently, all users are can add, delete, edit and make changes to restaurants in the makan book even if the User Guide says otherwise.
 This can affect all other users.
@@ -622,7 +620,7 @@ Examples:
 ==== List Favourites: `listFavourites`
 Allows User to list the restaurants he has entered into his favourites. +
 Format: `listFavourites`
-// end::evanmok2401(1)[]
+// end::evanmok2401(2)[]
 
 ====  Find common timeslots with friends: `findTime`
 Find common eating timeslots with a list of friends. +
